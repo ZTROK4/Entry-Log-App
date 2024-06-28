@@ -6,6 +6,11 @@
     android:padding="40px"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
+  <ImageView
+      android:layout_width="220dp"
+      android:layout_height="200dp"
+      android:background="@drawable/log"
+      />
   <TextView
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
@@ -17,6 +22,7 @@
       android:layout_height="wrap_content"
       android:hint="Enter your name"
       android:id="@+id/name"
+      android:drawableLeft="@drawable/baseline_person_24"
       />
   <TextView
       android:layout_width="match_parent"
@@ -30,6 +36,7 @@
       android:hint="Enter your admission number"
       android:inputType="number"
       android:id="@+id/admno"
+      android:drawableLeft="@drawable/baseline_confirmation_number_24"
       />
   <TextView
       android:layout_width="match_parent"
@@ -42,6 +49,7 @@
       android:layout_height="wrap_content"
       android:hint="Enter your system number"
       android:inputType="number"
+      android:drawableLeft="@drawable/baseline_computer_24"
       android:id="@+id/sysno"
       />
   <TextView
@@ -55,13 +63,14 @@
       android:layout_height="wrap_content"
       android:hint="Enter your department"
       android:id="@+id/dptmt"
+      android:drawableLeft="@drawable/baseline_school_24"
       />
   <androidx.appcompat.widget.AppCompatButton
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Add"
       android:textColor="#FFFFFF"
-      android:background="#79D70F"
+      android:background="#123192"
       android:id="@+id/addbtn"
       android:layout_margin="20px"
       />
@@ -70,7 +79,7 @@
       android:layout_height="wrap_content"
       android:text="logout"
       android:textColor="#FFFFFF"
-      android:background="#79D70F"
+      android:background="#123192"
       android:id="@+id/logoutbtn"
       android:layout_margin="20px"
       />
