@@ -1,5 +1,6 @@
 package com.example.entrylog;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,7 +32,15 @@ public class MainActivity extends AppCompatActivity {
                 String getUsername=ed1.getText().toString();
                 String getPassword=ed2.getText().toString();
 
-                Toast.makeText(getApplicationContext(),getUsername+"\n"+getPassword,Toast.LENGTH_SHORT).show();
+
+                if(getUsername.equals("admin")&&getPassword.equals("12345"))
+                {
+                    Intent i =new Intent(getApplicationContext(), LogEntry.class);
+                    startActivity(i);
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"Invalid Username or Password",Toast.LENGTH_SHORT).show();
+
             }
         });
     }
