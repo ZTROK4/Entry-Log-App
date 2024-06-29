@@ -14,6 +14,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -53,7 +58,25 @@ public class LogEntry extends AppCompatActivity {
                    throw new RuntimeException(e);
                }
 
-
+                //JSON object request creation
+               JsonObjectRequest jsonObjReq=new JsonObjectRequest(
+                       Request.Method.POST,
+                       apiUrl,
+                       student,
+                       new Response.Listener<JSONObject>() {
+                           @Override
+                           public void onResponse(JSONObject response) {
+                               Toast.makeText(getApplicationContext(), "Added successfully", Toast.LENGTH_SHORT).show();
+                               ;
+                           }
+                       },
+                       new Response.ErrorListener() {
+                           @Override
+                           public void onErrorResponse(VolleyError error) {
+                               Toast.makeText(getApplicationContext(),"Something went wrong",Toast.LENGTH_SHORT).show();
+                           }
+                       }
+               );
 
            }
        });
