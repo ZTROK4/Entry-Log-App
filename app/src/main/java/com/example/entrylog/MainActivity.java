@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText ed1,ed2;
     AppCompatButton b1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

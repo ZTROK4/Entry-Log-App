@@ -14,10 +14,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class LogEntry extends AppCompatActivity {
 
     EditText ed1,ed2,ed3,ed4;
     AppCompatButton b1,b2;
+    String apiUrl="http://10.0.4.16:3000/api/students";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +42,19 @@ public class LogEntry extends AppCompatActivity {
                String getSysNo=ed3.getText().toString();
                String getDptmt=ed4.getText().toString();
 
-               Toast.makeText(getApplicationContext(),"Added to log"+getName+getAdmNo+getSysNo+getDptmt,Toast.LENGTH_SHORT).show();
+               //JSON object ceation
+               JSONObject student=new JSONObject();
+               try {
+                   student.put("name",getName);
+                   student.put("admission_number",getAdmNo);
+                   student.put("system_number",getSysNo);
+                   student.put("department",getDptmt);
+               } catch (JSONException e) {
+                   throw new RuntimeException(e);
+               }
+
+
+
            }
        });
        b2.setOnClickListener(new View.OnClickListener() {
